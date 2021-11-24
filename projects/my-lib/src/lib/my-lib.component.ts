@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslocoService } from '@ngneat/transloco';
+import { BackendService } from './backend.service';
 
 @Component({
   selector: 'lib-my-lib',
@@ -8,9 +9,13 @@ import { TranslocoService } from '@ngneat/transloco';
 })
 export class MyLibComponent implements OnInit {
 
-  // constructor(private myLibServive: MyLibService){}
-
+  constructor(private backendService: BackendService){}
+  
   ngOnInit(): void {
+  }
+
+  getTotal(){
+    this.backendService.getFromBackend();
   }
 
 }
