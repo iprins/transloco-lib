@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslocoService } from '@ngneat/transloco';
+import { Observable } from 'rxjs';
 import { BackendService } from './backend.service';
 
 @Component({
@@ -9,13 +10,15 @@ import { BackendService } from './backend.service';
 })
 export class MyLibComponent implements OnInit {
 
+  backendData : string = '';
+
   constructor(private backendService: BackendService){}
   
   ngOnInit(): void {
   }
 
   getTotal(){
-    this.backendService.getFromBackend();
+     this.backendService.getFromBackend().subscribe(data =>  this.backendData = data);
   }
 
 }
