@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { TranslocoModule, TRANSLOCO_SCOPE } from '@ngneat/transloco';
 import { MyLibComponent } from './my-lib.component';
-import { TranslocoRootModule } from './transloco-root.module';
+// import { TranslocoRootModule } from './transloco-root.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +14,7 @@ import { TranslocoRootModule } from './transloco-root.module';
   }],
   imports: [
     CommonModule,
-    TranslocoRootModule
+    TranslocoModule
   ],
   exports: [
     MyLibComponent
